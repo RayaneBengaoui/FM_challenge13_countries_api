@@ -3,7 +3,6 @@ import { allCountriesURL, countryNameURL } from "../api";
 
 export const loadCountries = () => async (dispatch) => {
   const countriesData = await axios.get(allCountriesURL());
-  console.log(countriesData);
   dispatch({
     type: "FETCH_COUNTRIES",
     payload: {
