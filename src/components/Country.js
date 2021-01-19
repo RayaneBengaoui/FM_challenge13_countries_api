@@ -32,7 +32,11 @@ const StyledCountry = styled.div`
   }
 
   .info_section {
-    padding: 3rem;
+    padding: 1rem 2rem;
+
+    span {
+      font-weight: 600;
+    }
   }
 `;
 

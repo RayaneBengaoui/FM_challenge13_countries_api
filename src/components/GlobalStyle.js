@@ -20,6 +20,11 @@ button{
     font-weight : 700;
 }
 
+h2{
+    font-size : 1.2rem;
+    padding-bottom:1rem;
+}
+
 
 `;
 
