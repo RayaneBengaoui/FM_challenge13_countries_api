@@ -4,13 +4,28 @@ import moonIcon from "../icons/moon.svg";
 
 const Nav = () => {
   return (
-    <NavStyled>
-      <h1>Where in the world ?</h1>
-      <button>
-        <img src={moonIcon} alt="light/dark mode" />
-        Dark Mode
-      </button>
-    </NavStyled>
+    <>
+      <NavStyled>
+        <h1>Where in the world ?</h1>
+        <button>
+          <img src={moonIcon} alt="light/dark mode" />
+          Dark Mode
+        </button>
+      </NavStyled>
+      <SearchNav>
+        <StyledInput>
+          <img src="" alt="" />
+          <input type="text" />
+        </StyledInput>
+        <StyledListChoices>
+          <input list="regions" />
+          <datalist id="regions">
+            <option value="Europe"></option>
+            <option value="Africa"></option>
+          </datalist>
+        </StyledListChoices>
+      </SearchNav>
+    </>
   );
 };
 
@@ -35,5 +50,13 @@ const NavStyled = styled.div`
     font-size: 1.3rem;
   }
 `;
+
+const SearchNav = styled.div`
+  min-height: 20vh;
+`;
+
+const StyledInput = styled.div``;
+
+const StyledListChoices = styled.div``;
 
 export default Nav;
