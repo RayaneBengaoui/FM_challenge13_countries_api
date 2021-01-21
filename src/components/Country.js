@@ -23,7 +23,7 @@ const Country = ({ name, population, region, capital, flag }) => {
 };
 
 const StyledCountry = styled.div`
-  min-height: 30vh;
+  height: 40vh;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
   img {
     width: 100%;

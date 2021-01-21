@@ -8,7 +8,6 @@ import loupeIcon from "../icons/loupe.svg";
 //Redux
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSearch } from "../actions/countriesAction";
-import { text } from "@fortawesome/fontawesome-svg-core";
 
 const Nav = () => {
   const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { allCountriesURL, countryNameURL } from "../api";
+import { allCountriesURL } from "../api";
 
 export const loadCountries = () => async (dispatch) => {
   const countriesData = await axios.get(allCountriesURL());
