@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styled from "styled-components";
 
@@ -15,16 +15,18 @@ const Nav = () => {
 
   const { countries, searched } = useSelector((state) => state.countries);
 
-  const searchHandler = (e) => {
-    setTextInput(e.target.value.toLowerCase());
-
+  useEffect(() => {
     const searchCountries = [...countries];
 
     const filteredCountries = searchCountries.filter(({ name }) =>
-      name.toLowerCase().startsWith(textInput)
+      name.toLowerCase().startsWith(textInput.toLowerCase())
     );
 
     dispatch(fetchSearch(filteredCountries));
+  }, [textInput]);
+
+  const searchHandler = (e) => {
+    setTextInput(e.target.value);
   };
 
   return (
@@ -39,7 +41,7 @@ const Nav = () => {
       <SearchNav>
         <StyledInput>
           <img src={loupeIcon} alt="loupe" />
-          <input type="text" onChange={searchHandler} />
+          <input value={textInput} type="text" onChange={searchHandler} />
         </StyledInput>
         <StyledListChoices>
           <input list="regions" placeholder="Filter by Region" />
