@@ -48,7 +48,8 @@ const Home = () => {
 const Countries = styled.div`
   min-height: 90vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, 280px);
+  grid-template-rows: repeat(auto-fit, 400px);
   grid-column-gap: 5rem;
   grid-row-gap: 5rem;
   padding: 0rem 7rem;
