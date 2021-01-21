@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
 html{
     font-family: 'Nunito Sans', sans-serif;
+    background-color: #fcfcfc;
 }
 
 button{

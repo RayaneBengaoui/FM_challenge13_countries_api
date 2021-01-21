@@ -11,13 +11,13 @@ export const loadCountries = () => async (dispatch) => {
   });
 };
 
-export const fetchSearch = (country_name) => async (dispatch) => {
-  const searchCountries = await axios.get(countryNameURL(country_name));
+export const fetchSearch = (search_countries) => (dispatch) => {
+  // const searchCountries = await axios.get(countryNameURL(country_name));
 
   dispatch({
     type: "FETCH_SEARCHED",
     payload: {
-      searched: searchCountries.data.results,
+      searched: search_countries,
     },
   });
 };

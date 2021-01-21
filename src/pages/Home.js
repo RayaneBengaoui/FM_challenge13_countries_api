@@ -21,15 +21,25 @@ const Home = () => {
     <>
       <Nav />
       <Countries>
-        {countries.map(({ name, capital, population, region, flag }) => (
-          <Country
-            name={name}
-            capital={capital}
-            population={population}
-            region={region}
-            flag={flag}
-          />
-        ))}
+        {searched.length === 0
+          ? countries.map(({ name, capital, population, region, flag }) => (
+              <Country
+                name={name}
+                capital={capital}
+                population={population}
+                region={region}
+                flag={flag}
+              />
+            ))
+          : searched.map(({ name, capital, population, region, flag }) => (
+              <Country
+                name={name}
+                capital={capital}
+                population={population}
+                region={region}
+                flag={flag}
+              />
+            ))}
       </Countries>
     </>
   );
