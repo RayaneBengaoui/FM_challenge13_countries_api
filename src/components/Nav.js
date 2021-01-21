@@ -12,21 +12,34 @@ import { fetchSearch } from "../actions/countriesAction";
 const Nav = () => {
   const dispatch = useDispatch();
   const [textInput, setTextInput] = useState("");
+  const [filterRegion, setFilterRegion] = useState("");
 
   const { countries, searched } = useSelector((state) => state.countries);
 
   useEffect(() => {
     const searchCountries = [...countries];
 
-    const filteredCountries = searchCountries.filter(({ name }) =>
-      name.toLowerCase().startsWith(textInput.toLowerCase())
-    );
+    let filteredCountries;
+
+    filterRegion === ""
+      ? (filteredCountries = searchCountries.filter(({ name }) =>
+          name.toLowerCase().startsWith(textInput.toLowerCase())
+        ))
+      : (filteredCountries = searchCountries.filter(
+          ({ name, region }) =>
+            name.toLowerCase().startsWith(textInput.toLowerCase()) &&
+            region === filterRegion
+        ));
 
     dispatch(fetchSearch(filteredCountries));
-  }, [textInput]);
+  }, [textInput, filterRegion]);
 
   const searchHandler = (e) => {
     setTextInput(e.target.value);
+  };
+
+  const filterHandler = (e) => {
+    setFilterRegion(e.target.value);
   };
 
   return (
@@ -44,11 +57,15 @@ const Nav = () => {
           <input value={textInput} type="text" onChange={searchHandler} />
         </StyledInput>
         <StyledListChoices>
-          <input list="regions" placeholder="Filter by Region" />
+          <input
+            list="regions"
+            placeholder="Filter by Region"
+            onChange={filterHandler}
+          />
           <datalist id="regions">
             <option value="Europe"></option>
             <option value="Africa"></option>
-            <option value="America"></option>
+            <option value="Americas"></option>
             <option value="Oceania"></option>
             <option value="Asia"></option>
           </datalist>
