@@ -21,25 +21,29 @@ const Home = () => {
     <>
       <Nav />
       <Countries>
-        {searched.length === 0
-          ? countries.map(({ name, capital, population, region, flag }) => (
-              <Country
-                name={name}
-                capital={capital}
-                population={population}
-                region={region}
-                flag={flag}
-              />
-            ))
-          : searched.map(({ name, capital, population, region, flag }) => (
-              <Country
-                name={name}
-                capital={capital}
-                population={population}
-                region={region}
-                flag={flag}
-              />
-            ))}
+        {searched.length === 1 && searched.includes("No results found") ? (
+          <p>No results found</p>
+        ) : searched.length === 0 ? (
+          countries.map(({ name, capital, population, region, flag }) => (
+            <Country
+              name={name}
+              capital={capital}
+              population={population}
+              region={region}
+              flag={flag}
+            />
+          ))
+        ) : (
+          searched.map(({ name, capital, population, region, flag }) => (
+            <Country
+              name={name}
+              capital={capital}
+              population={population}
+              region={region}
+              flag={flag}
+            />
+          ))
+        )}
       </Countries>
     </>
   );

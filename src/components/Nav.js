@@ -31,7 +31,11 @@ const Nav = () => {
             region === filterRegion
         ));
 
-    dispatch(fetchSearch(filteredCountries));
+    if (filteredCountries.length === 0 && textInput !== "") {
+      dispatch(fetchSearch(["No results found"]));
+    } else {
+      dispatch(fetchSearch(filteredCountries));
+    }
   }, [textInput, filterRegion]);
 
   const searchHandler = (e) => {
