@@ -10,7 +10,46 @@ const CountryDetail = () => {
       <BackButton>Back</BackButton>
       <Details>
         <Flag flag={country.flag} />
-        <Description></Description>
+        <Description>
+          <h1>{country.name}</h1>
+          <div className="upper-section">
+            <div className="upper-section__left">
+              <p>
+                <span>Native Name:</span> {country.nativeName}
+              </p>
+              <p>
+                <span>Population:</span> {country.population}
+              </p>
+              <p>
+                <span>Region:</span> {country.region}
+              </p>
+              <p>
+                <span>Sub Region:</span> {country.subregion}
+              </p>
+              <p>
+                <span>Capital:</span> {country.capital}
+              </p>
+            </div>
+            <div className="upper-section__right">
+              <p>
+                <span>Top Level Domain:</span> {country.topLevelDomain}
+              </p>
+              <p>
+                <span>Currency:</span>{" "}
+                {country.currencies.map((currency) => {
+                  return `${currency.name} `;
+                })}
+              </p>
+              <p>
+                <span>Languages:</span>{" "}
+                {country.languages.map((language) => {
+                  return `${language.name} `;
+                })}
+              </p>
+            </div>
+          </div>
+          <div className="lower-section"></div>
+        </Description>
       </Details>
     </CountryDetailStyled>
   );
