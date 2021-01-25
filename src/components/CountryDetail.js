@@ -48,7 +48,14 @@ const CountryDetail = () => {
               </p>
             </div>
           </div>
-          <div className="lower-section"></div>
+          <div className="lower-section">
+            <p>
+              <span>Border Countries:</span>{" "}
+              {country.borders.map((border) => {
+                return `${border} `;
+              })}
+            </p>
+          </div>
         </Description>
       </Details>
     </CountryDetailStyled>
