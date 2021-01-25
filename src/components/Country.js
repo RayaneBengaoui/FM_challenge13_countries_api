@@ -1,11 +1,23 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+//Redux
+import { useDispatch } from "react-redux";
+import { loadDetail } from "../actions/countryDetailAction";
+
 const Country = ({ name, population, region, capital, flag }) => {
+  const dispatch = useDispatch();
+
+  const loadDetailHandler = () => {
+    document.body.style.overdlow = "hidden";
+    dispatch(loadDetail(name));
+    console.log("HELOOOO");
+  };
+
   return (
     <StyledCountry>
       <Link to={`/country/${name}`}>
-        <div className="flag_section">
+        <div className="flag_section" onClick={loadDetailHandler}>
           <img src={flag} alt="flag" />
         </div>
       </Link>

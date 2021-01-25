@@ -5,6 +5,7 @@ import { loadCountries } from "../actions/countriesAction";
 //Components
 import Nav from "../components/Nav";
 import Country from "../components/Country";
+import CountryDetail from "../components/CountryDetail";
 
 import styled from "styled-components";
 
@@ -14,6 +15,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
+  console.log(pathId);
 
   useEffect(() => {
     dispatch(loadCountries());
