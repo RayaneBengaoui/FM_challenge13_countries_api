@@ -8,8 +8,12 @@ import Country from "../components/Country";
 
 import styled from "styled-components";
 
+import { useLocation } from "react-router-dom";
+
 const Home = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
+  const pathId = location.pathname.split("/")[2];
 
   useEffect(() => {
     dispatch(loadCountries());
@@ -21,6 +25,7 @@ const Home = () => {
     <>
       <Nav />
       <Countries>
+        {pathId && <CountryDetail />}
         {searched.length === 1 && searched.includes("No results found") ? (
           <p>No results found</p>
         ) : searched.length === 0 ? (

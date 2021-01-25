@@ -1,11 +1,14 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Country = ({ name, population, region, capital, flag }) => {
   return (
     <StyledCountry>
-      <div className="flag_section">
-        <img src={flag} alt="flag" />
-      </div>
+      <Link to={`/country/${name}`}>
+        <div className="flag_section">
+          <img src={flag} alt="flag" />
+        </div>
+      </Link>
       <div className="info_section">
         <h2>{name}</h2>
         <p>
@@ -25,10 +28,12 @@ const Country = ({ name, population, region, capital, flag }) => {
 const StyledCountry = styled.div`
   height: 40vh;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+
   img {
     width: 100%;
     height: 20vh;
     object-fit: cover;
+    cursor: pointer;
   }
 
   .info_section {
