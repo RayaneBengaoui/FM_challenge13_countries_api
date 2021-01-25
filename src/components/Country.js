@@ -9,9 +9,8 @@ const Country = ({ name, population, region, capital, flag }) => {
   const dispatch = useDispatch();
 
   const loadDetailHandler = () => {
-    document.body.style.overdlow = "hidden";
+    document.body.style.overflow = "hidden";
     dispatch(loadDetail(name));
-    console.log("HELOOOO");
   };
 
   return (
