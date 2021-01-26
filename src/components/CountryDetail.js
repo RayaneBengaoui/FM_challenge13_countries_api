@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const CountryDetail = () => {
+  const history = useHistory();
   const { country, isLoading } = useSelector((state) => state.detail);
+
+  const backHandler = () => {
+    document.body.style.overflow = "auto";
+    history.push("/");
+  };
 
   return (
     <>
       {!isLoading && (
         <CountryDetailStyled>
-          <BackButton>Back</BackButton>
+          <BackButton onClick={backHandler}>Back</BackButton>
           <Details>
             <Flag flag={country.flag} />
             <Description>
