@@ -5,6 +5,8 @@ import { useHistory } from "react-router-dom";
 
 import { clearDetail } from "../actions/countryDetailAction";
 
+import backArrow from "../icons/back.svg";
+
 const CountryDetail = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -20,7 +22,10 @@ const CountryDetail = () => {
     <>
       {!isLoading && (
         <CountryDetailStyled>
-          <BackButton onClick={backHandler}>Back</BackButton>
+          <BackButton onClick={backHandler}>
+            <img src={backArrow} alt="" />
+            Back
+          </BackButton>
           <Details>
             <Flag flag={country.flag} />
             <Description>
@@ -87,13 +92,49 @@ const CountryDetailStyled = styled.div`
   padding: 0rem 7rem;
 `;
 
-const BackButton = styled.button``;
-const Details = styled.div``;
+const BackButton = styled.div`
+  margin: 5rem 0rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 7rem;
+  padding: 0.5rem 3.8rem;
+  border-radius: 0.4rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  font-weight: bolder;
+  background-color: white;
+  img {
+    margin-right: 0.5rem;
+  }
+`;
+const Details = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 const Flag = styled.img.attrs((props) => ({
   src: props.flag,
-}))``;
+}))`
+  max-width: 40rem;
+  height: 40vh;
+  object-fit: cover;
+`;
 
-const Description = styled.div``;
+const Description = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  .upper-section {
+    display: flex;
+
+    &__left {
+      margin-right: 30rem;
+    }
+  }
+
+  .lower-section {
+    padding-top: 5rem;
+  }
+`;
 
 export default CountryDetail;
