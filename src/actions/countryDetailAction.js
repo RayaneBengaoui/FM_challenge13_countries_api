@@ -2,6 +2,9 @@ import axios from "axios";
 import { countryNameURL } from "../api";
 
 export const loadDetail = (name) => async (dispatch) => {
+  dispatch({
+    type: "LOADING_DETAIL",
+  });
   const countriesData = await axios.get(countryNameURL(name));
 
   dispatch({

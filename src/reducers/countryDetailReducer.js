@@ -1,5 +1,6 @@
 const initialState = {
   country: {},
+  isLoading: true,
 };
 
 const countryDetailReducer = (state = initialState, action) => {
@@ -8,6 +9,12 @@ const countryDetailReducer = (state = initialState, action) => {
       return {
         ...state,
         country: action.payload.country,
+        isLoading: false,
+      };
+    case "LOADING_DETAIL":
+      return {
+        ...state,
+        isLoading: true,
       };
     default:
       return { ...state };
