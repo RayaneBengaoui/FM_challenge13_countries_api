@@ -16,6 +16,11 @@ const countryDetailReducer = (state = initialState, action) => {
         ...state,
         isLoading: true,
       };
+    case "CLEAR_DETAIL":
+      return {
+        ...state,
+        country: {},
+      };
     default:
       return { ...state };
   }

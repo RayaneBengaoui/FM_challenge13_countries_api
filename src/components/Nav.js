@@ -14,7 +14,12 @@ const Nav = () => {
   const [textInput, setTextInput] = useState("");
   const [filterRegion, setFilterRegion] = useState("");
 
-  const { countries, searched } = useSelector((state) => state.countries);
+  const { countries } = useSelector((state) => state.countries);
+  const { country } = useSelector((state) => state.detail);
+
+  const isActive = () => {
+    return Object.keys(country).length === 0 ? false : true;
+  };
 
   useEffect(() => {
     const searchCountries = [...countries];
@@ -48,7 +53,7 @@ const Nav = () => {
 
   return (
     <>
-      <NavStyled>
+      <NavStyled active={isActive()}>
         <h1>Where in the world ?</h1>
         <button>
           <img src={moonIcon} alt="light/dark mode" />
@@ -88,6 +93,13 @@ const NavStyled = styled.div`
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
   background-color: white;
 
+  ${({ active }) =>
+    active &&
+    `
+    position: fixed;
+  width: 100%;
+  `}
+
   img {
     width: 1.5rem;
     margin-right: 0.5rem;
@@ -108,6 +120,8 @@ const SearchNav = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0rem 7rem;
+
+  width: 100%;
 `;
 
 const StyledInput = styled.div``;

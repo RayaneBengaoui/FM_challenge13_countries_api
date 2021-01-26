@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+
+import { clearDetail } from "../actions/countryDetailAction";
 
 const CountryDetail = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
   const { country, isLoading } = useSelector((state) => state.detail);
 
   const backHandler = () => {
     document.body.style.overflow = "auto";
+    dispatch(clearDetail());
     history.push("/");
   };
 

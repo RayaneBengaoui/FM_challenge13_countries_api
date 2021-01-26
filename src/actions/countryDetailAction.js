@@ -14,3 +14,9 @@ export const loadDetail = (name) => async (dispatch) => {
     },
   });
 };
+
+export const clearDetail = () => (dispatch) => {
+  dispatch({
+    type: "CLEAR_DETAIL",
+  });
+};
