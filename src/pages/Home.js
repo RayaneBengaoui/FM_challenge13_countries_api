@@ -60,7 +60,6 @@ const Countries = styled.div`
   min-height: 90vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 0.25fr));
-
   grid-column-gap: 5rem;
   grid-row-gap: 5rem;
   padding: 0rem 7rem;

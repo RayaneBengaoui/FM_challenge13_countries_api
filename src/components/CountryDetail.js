@@ -83,7 +83,8 @@ const CountryDetailStyled = styled.div`
   left: 0;
   width: 100%;
   min-height: 100vh;
-  background-color: lightblue;
+  background-color: #f3f3f3;
+  padding: 0rem 7rem;
 `;
 
 const BackButton = styled.button``;

@@ -92,6 +92,7 @@ const NavStyled = styled.div`
   padding: 0rem 7rem;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
   background-color: white;
+  z-index: 1000;
 
   ${({ active }) =>
     active &&
@@ -120,7 +121,6 @@ const SearchNav = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0rem 7rem;
-
   width: 100%;
 `;
 
