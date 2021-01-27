@@ -7,6 +7,8 @@ import { clearDetail } from "../actions/countryDetailAction";
 
 import backArrow from "../icons/back.svg";
 
+import Border from "../components/Border";
+
 const CountryDetail = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -70,7 +72,7 @@ const CountryDetail = () => {
                 <p>
                   <span>Border Countries:</span>{" "}
                   {country.borders.map((border) => {
-                    return `${border} `;
+                    return <Border alphaCode={border} />;
                   })}
                 </p>
               </div>
