@@ -26,6 +26,10 @@ h2{
     padding-bottom:1rem;
 }
 
+span {
+      font-weight: 600;
+    }
+
 
 `;
 

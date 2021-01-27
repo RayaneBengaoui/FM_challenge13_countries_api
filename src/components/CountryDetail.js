@@ -71,10 +71,10 @@ const CountryDetail = () => {
               <div className="lower-section">
                 <p>
                   <span>Border Countries:</span>{" "}
-                  {country.borders.map((border) => {
-                    return <Border alphaCode={border} />;
-                  })}
                 </p>
+                {country.borders.map((border) => {
+                  return <Border alphaCode={border} />;
+                })}
               </div>
             </Description>
           </Details>
@@ -112,6 +112,7 @@ const BackButton = styled.div`
 const Details = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const Flag = styled.img.attrs((props) => ({
@@ -126,6 +127,14 @@ const Description = styled.div`
   display: flex;
   flex-direction: column;
 
+  h1 {
+    padding-bottom: 2rem;
+  }
+
+  p {
+    padding-bottom: 0.5rem;
+  }
+
   .upper-section {
     display: flex;
 
@@ -135,7 +144,9 @@ const Description = styled.div`
   }
 
   .lower-section {
-    padding-top: 5rem;
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
   }
 `;
 
