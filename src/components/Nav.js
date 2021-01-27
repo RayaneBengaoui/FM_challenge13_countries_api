@@ -63,7 +63,12 @@ const Nav = () => {
       <SearchNav>
         <StyledInput>
           <img src={loupeIcon} alt="loupe" />
-          <input value={textInput} type="text" onChange={searchHandler} />
+          <input
+            placeholder="Search for a country.."
+            value={textInput}
+            type="text"
+            onChange={searchHandler}
+          />
         </StyledInput>
         <StyledListChoices>
           <input
@@ -124,7 +129,25 @@ const SearchNav = styled.div`
   width: 100%;
 `;
 
-const StyledInput = styled.div``;
+const StyledInput = styled.div`
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  padding: 0.6rem 0rem;
+  width: 25rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  img {
+    margin: 0rem 1rem;
+  }
+
+  input {
+    align-self: stretch;
+    font-size: 1.2rem;
+    font-family: inherit;
+  }
+`;
 
 const StyledListChoices = styled.div``;
 

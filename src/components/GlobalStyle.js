@@ -21,6 +21,12 @@ button{
     font-weight : 700;
 }
 
+input{
+    outline: none;
+    border: none;
+    background-color:transparent;
+}
+
 h2{
     font-size : 1.2rem;
     padding-bottom:1rem;
