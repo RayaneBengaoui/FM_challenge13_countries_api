@@ -26,7 +26,7 @@ const Nav = () => {
 
     let filteredCountries;
 
-    filterRegion === ""
+    filterRegion === "All"
       ? (filteredCountries = searchCountries.filter(({ name }) =>
           name.toLowerCase().startsWith(textInput.toLowerCase())
         ))
@@ -71,18 +71,19 @@ const Nav = () => {
           />
         </StyledInput>
         <StyledListChoices>
-          <input
+          {/* <input
             list="regions"
             placeholder="Filter by Region"
             onChange={filterHandler}
-          />
-          <datalist id="regions">
-            <option value="Europe"></option>
-            <option value="Africa"></option>
-            <option value="Americas"></option>
-            <option value="Oceania"></option>
-            <option value="Asia"></option>
-          </datalist>
+          /> */}
+          <select name="regions" onChange={filterHandler}>
+            <option value="All">All</option>
+            <option value="Europe">Europe</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Oceania">Oceania</option>
+            <option value="Asia">Asia</option>
+          </select>
         </StyledListChoices>
       </SearchNav>
     </>
