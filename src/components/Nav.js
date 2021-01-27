@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import moonIcon from "../icons/moon.svg";
 import loupeIcon from "../icons/loupe.svg";
+import downIcon from "../icons/down.svg";
 
 //Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -71,11 +72,6 @@ const Nav = () => {
           />
         </StyledInput>
         <StyledListChoices>
-          {/* <input
-            list="regions"
-            placeholder="Filter by Region"
-            onChange={filterHandler}
-          /> */}
           <select name="regions" onChange={filterHandler}>
             <option value="All">All</option>
             <option value="Europe">Europe</option>
@@ -131,7 +127,7 @@ const SearchNav = styled.div`
 `;
 
 const StyledInput = styled.div`
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
   background-color: white;
   padding: 0.6rem 0rem;
   width: 25rem;
@@ -150,6 +146,21 @@ const StyledInput = styled.div`
   }
 `;
 
-const StyledListChoices = styled.div``;
+const StyledListChoices = styled.div`
+  select {
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+    padding: 0.6rem 1rem;
+    font-size: 1.2rem;
+    width: 10rem;
+    font-family: inherit;
+    background-image: url(${downIcon});
+    background-repeat: no-repeat;
+    appearance: none;
+    background-size: 0.8rem;
+    background-position: 90% 50%;
+  }
+`;
 
 export default Nav;
