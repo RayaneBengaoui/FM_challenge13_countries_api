@@ -39,7 +39,8 @@ const Country = ({ name, population, region, capital, flag }) => {
 const StyledCountry = styled.div`
   height: 40vh;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
-  background-color: white;
+  background: ${({ theme }) => theme.card};
+  transition: all 0.75s ease;
 
   img {
     width: 100%;
@@ -50,10 +51,6 @@ const StyledCountry = styled.div`
 
   .info_section {
     padding: 1rem 2rem;
-
-    span {
-      font-weight: 600;
-    }
   }
 `;
 

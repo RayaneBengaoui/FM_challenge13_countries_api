@@ -10,7 +10,7 @@ import downIcon from "../icons/down.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSearch } from "../actions/countriesAction";
 
-const Nav = () => {
+const Nav = ({ themeToggler }) => {
   const dispatch = useDispatch();
   const [textInput, setTextInput] = useState("");
   const [filterRegion, setFilterRegion] = useState("");
@@ -56,7 +56,7 @@ const Nav = () => {
     <>
       <NavStyled active={isActive()}>
         <h1>Where in the world ?</h1>
-        <button>
+        <button onClick={themeToggler}>
           <img src={moonIcon} alt="light/dark mode" />
           Dark Mode
         </button>
