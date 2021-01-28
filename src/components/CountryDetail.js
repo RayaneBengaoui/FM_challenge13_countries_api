@@ -25,7 +25,7 @@ const CountryDetail = () => {
       {!isLoading && (
         <CountryDetailStyled>
           <BackButton onClick={backHandler}>
-            <img src={backArrow} alt="" />
+            <img src={backArrow} alt="back arrow" />
             Back
           </BackButton>
           <Details>
@@ -90,7 +90,8 @@ const CountryDetailStyled = styled.div`
   left: 0;
   width: 100%;
   min-height: 100vh;
-  background-color: #f3f3f3;
+  background-color: ${({ theme }) => theme.body};
+  transition: all 0.75s ease;
   padding: 0rem 7rem;
 `;
 
@@ -104,9 +105,11 @@ const BackButton = styled.div`
   border-radius: 0.4rem;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
   font-weight: bolder;
-  background-color: white;
+  background-color: ${({ theme }) => theme.card};
+  transition: all 0.75s ease;
   img {
     margin-right: 0.5rem;
+    filter: ${({ theme }) => theme.svg};
   }
 `;
 const Details = styled.div`

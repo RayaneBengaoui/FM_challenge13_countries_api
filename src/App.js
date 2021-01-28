@@ -17,7 +17,7 @@ function App() {
         <GlobalStyle />
         <div className="App">
           <Route path={["/country/:id", "/"]}>
-            <Home themeToggler={themeToggler} />
+            <Home themeToggler={themeToggler} theme={theme} />
           </Route>
         </div>
       </>

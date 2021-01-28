@@ -40,7 +40,7 @@ const StyledCountry = styled.div`
   height: 40vh;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
   background: ${({ theme }) => theme.card};
-  transition: all 0.75s ease;
+  /* transition: all 0.75s ease; */
 
   img {
     width: 100%;

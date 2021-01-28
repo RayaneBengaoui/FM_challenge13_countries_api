@@ -11,7 +11,7 @@ import styled from "styled-components";
 
 import { useLocation } from "react-router-dom";
 
-const Home = ({ themeToggler }) => {
+const Home = ({ themeToggler, theme }) => {
   const dispatch = useDispatch();
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
@@ -24,7 +24,7 @@ const Home = ({ themeToggler }) => {
 
   return (
     <>
-      <Nav themeToggler={themeToggler} />
+      <Nav themeToggler={themeToggler} theme={theme} />
       <Countries>
         {pathId && <CountryDetail />}
         {searched.length === 1 && searched.includes("No results found") ? (
