@@ -13,7 +13,7 @@ import { fetchSearch } from "../actions/countriesAction";
 const Nav = ({ themeToggler }) => {
   const dispatch = useDispatch();
   const [textInput, setTextInput] = useState("");
-  const [filterRegion, setFilterRegion] = useState("");
+  const [filterRegion, setFilterRegion] = useState("All");
 
   const { countries } = useSelector((state) => state.countries);
   const { country } = useSelector((state) => state.detail);
