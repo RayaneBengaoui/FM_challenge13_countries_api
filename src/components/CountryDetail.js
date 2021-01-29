@@ -91,7 +91,7 @@ const CountryDetailStyled = styled.div`
   width: 100%;
   min-height: 100vh;
   background-color: ${({ theme }) => theme.body};
-  transition: all 0.75s ease;
+  transition: all 0.5s ease;
   padding: 0rem 7rem;
 `;
 
@@ -106,7 +106,7 @@ const BackButton = styled.div`
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
   font-weight: bolder;
   background-color: ${({ theme }) => theme.card};
-  transition: all 0.75s ease;
+
   img {
     margin-right: 0.5rem;
     filter: ${({ theme }) => theme.svg};
@@ -121,7 +121,7 @@ const Details = styled.div`
 const Flag = styled.img.attrs((props) => ({
   src: props.flag,
 }))`
-  max-width: 40rem;
+  width: 40rem;
   height: 40vh;
   object-fit: cover;
 `;
@@ -129,6 +129,7 @@ const Flag = styled.img.attrs((props) => ({
 const Description = styled.div`
   display: flex;
   flex-direction: column;
+  width: 60rem;
 
   h1 {
     padding-bottom: 2rem;
@@ -140,10 +141,7 @@ const Description = styled.div`
 
   .upper-section {
     display: flex;
-
-    &__left {
-      margin-right: 30rem;
-    }
+    justify-content: space-between;
   }
 
   .lower-section {

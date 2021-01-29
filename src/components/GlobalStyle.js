@@ -17,7 +17,7 @@ body{
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
    
-    transition: all 0.75s ease;
+    transition: all 0.5s ease;
 }
 
 button{

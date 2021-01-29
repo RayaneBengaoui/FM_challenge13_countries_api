@@ -102,7 +102,7 @@ const NavStyled = styled.div`
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
   /* background-color: white; */
   background: ${({ theme }) => theme.card};
-  transition: all 0.75s ease;
+  /* transition: all 0.75s ease; */
   z-index: 1000;
 
   ${({ active }) =>
