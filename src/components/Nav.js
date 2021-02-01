@@ -111,10 +111,12 @@ const NavStyled = styled.div`
   justify-content: space-between;
   padding: 0rem 7rem;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
-  /* background-color: white; */
   background: ${({ theme }) => theme.card};
-  /* transition: all 0.75s ease; */
   z-index: 1000;
+
+  @media screen and (max-width: 900px) {
+    padding: 0rem 1.5rem;
+  }
 
   ${({ active }) =>
     active &&
@@ -136,10 +138,16 @@ const NavStyled = styled.div`
     justify-content: center;
     font-size: 1.3rem;
     color: ${({ theme }) => theme.text};
+    @media screen and (max-width: 450px) {
+      font-size: 1rem;
+    }
   }
 
   h1 {
     cursor: pointer;
+    @media screen and (max-width: 450px) {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -149,7 +157,12 @@ const SearchNav = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0rem 7rem;
-  width: 100%;
+
+  @media screen and (max-width: 900px) {
+    padding: 0rem 0rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 `;
 
 const StyledInput = styled.div`
@@ -190,6 +203,11 @@ const StyledSelect = styled.select`
   background-position: 90% 50%;
   background-color: ${({ theme }) => theme.card};
   color: ${({ theme }) => theme.text};
+
+  @media screen and (max-width: 450px) {
+    align-self: flex-start;
+    margin: 0rem 1.5rem;
+  }
 `;
 
 export default Nav;

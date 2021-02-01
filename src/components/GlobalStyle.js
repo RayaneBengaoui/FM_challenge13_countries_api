@@ -11,6 +11,11 @@ const GlobalStyle = createGlobalStyle`
 html{
     font-family: 'Nunito Sans', sans-serif;
     /* background-color: rgba(211, 211, 211, 0.2); */
+
+    @media screen and (max-width: 1000px) {
+        font-size: 85%;
+  
+}
 }
 
 body{

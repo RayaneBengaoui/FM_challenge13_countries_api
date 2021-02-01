@@ -93,6 +93,11 @@ const CountryDetailStyled = styled.div`
   background-color: ${({ theme }) => theme.body};
   transition: all 0.5s ease;
   padding: 0rem 7rem;
+  @media screen and (max-width: 750px) {
+    padding: 0rem 2rem;
+    overflow-y: scroll;
+    height: 90vh;
+  }
 `;
 
 const BackButton = styled.div`
@@ -100,12 +105,16 @@ const BackButton = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 7rem;
   padding: 0.5rem 3.8rem;
   border-radius: 0.4rem;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
   font-weight: bolder;
   background-color: ${({ theme }) => theme.card};
+  @media screen and (max-width: 1900px) {
+    margin: 3rem 0rem;
+  }
 
   img {
     margin-right: 0.5rem;
@@ -116,6 +125,10 @@ const Details = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 1900px) {
+    flex-direction: column;
+  }
 `;
 
 const Flag = styled.img.attrs((props) => ({
@@ -124,15 +137,29 @@ const Flag = styled.img.attrs((props) => ({
   width: 40rem;
   height: 40vh;
   object-fit: cover;
+  @media screen and (max-width: 1900px) {
+    width: 25rem;
+    height: 25vh;
+    margin-bottom: 3rem;
+  }
+  @media screen and (max-width: 750px) {
+    width: 100%;
+  }
 `;
 
 const Description = styled.div`
   display: flex;
   flex-direction: column;
   width: 60rem;
+  @media screen and (max-width: 1050px) {
+    width: 100%;
+  }
 
   h1 {
     padding-bottom: 2rem;
+    @media screen and (max-width: 1050px) {
+      text-align: center;
+    }
   }
 
   p {
@@ -142,12 +169,17 @@ const Description = styled.div`
   .upper-section {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 750px) {
+      flex-direction: column;
+    }
   }
 
   .lower-section {
-    padding-top: 4rem;
+    padding: 4rem 0rem;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    min-height: 10vh;
   }
 `;
 
