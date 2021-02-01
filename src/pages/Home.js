@@ -32,6 +32,7 @@ const Home = ({ themeToggler, theme }) => {
         ) : searched.length === 0 ? (
           countries.map(({ name, capital, population, region, flag }) => (
             <Country
+              key={name}
               name={name}
               capital={capital}
               population={population}
@@ -42,6 +43,7 @@ const Home = ({ themeToggler, theme }) => {
         ) : (
           searched.map(({ name, capital, population, region, flag }) => (
             <Country
+              key={name}
               name={name}
               capital={capital}
               population={population}

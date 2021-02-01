@@ -73,7 +73,7 @@ const CountryDetail = () => {
                   <span>Border Countries:</span>{" "}
                 </p>
                 {country.borders.map((border) => {
-                  return <Border alphaCode={border} />;
+                  return <Border key={border} alphaCode={border} />;
                 })}
               </div>
             </Description>
