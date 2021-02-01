@@ -20,3 +20,14 @@ export const clearDetail = () => (dispatch) => {
     type: "CLEAR_DETAIL",
   });
 };
+
+export const loadDetailInstant = (name) => async (dispatch) => {
+  const countriesData = await axios.get(countryNameURL(name));
+
+  dispatch({
+    type: "GET_DETAIL",
+    payload: {
+      country: countriesData.data[0],
+    },
+  });
+};

@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 import { useSelector } from "react-redux";
+
+import { useDispatch } from "react-redux";
+import { loadDetailInstant } from "../actions/countryDetailAction";
+
 const Border = ({ alphaCode }) => {
   const { countries } = useSelector((state) => state.countries);
+  const dispatch = useDispatch();
 
   const alphaCodeToName = (alpha) => {
     const countryBorder = countries.filter((country) => {
@@ -12,7 +17,15 @@ const Border = ({ alphaCode }) => {
     return countryBorder[0].name;
   };
 
-  return <StyledBorder>{alphaCodeToName(alphaCode)}</StyledBorder>;
+  const getBorderCountry = () => {
+    dispatch(loadDetailInstant(alphaCodeToName(alphaCode)));
+  };
+
+  return (
+    <StyledBorder onClick={getBorderCountry}>
+      {alphaCodeToName(alphaCode)}
+    </StyledBorder>
+  );
 };
 
 const StyledBorder = styled.div`
@@ -21,6 +34,7 @@ const StyledBorder = styled.div`
   max-width: 15rem;
   margin-left: 1rem;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 `;
 
 export default Border;
