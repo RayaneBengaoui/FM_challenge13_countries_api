@@ -8,6 +8,8 @@ export const lightTheme = {
   card: "white",
   svg: "invert(0);",
   downIcon: `${downIcon}`,
+  hoverBg: "black",
+  hoverText: "white",
 };
 export const darkTheme = {
   body: "hsl(207, 26%, 17%)",
@@ -15,4 +17,6 @@ export const darkTheme = {
   card: "hsl(209, 23%, 22%)",
   svg: "invert(1);",
   downIcon: `${downLightIcon}`,
+  hoverBg: "white",
+  hoverText: "hsl(209, 23%, 22%)",
 };

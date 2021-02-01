@@ -30,11 +30,18 @@ const Border = ({ alphaCode }) => {
 
 const StyledBorder = styled.div`
   padding: 0.3rem 0.7rem;
-  border: solid 1px #b6b6b6;
-  max-width: 15rem;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+  max-width: 30rem;
   margin-left: 1rem;
   margin-bottom: 0.5rem;
   cursor: pointer;
+  background-color: ${({ theme }) => theme.card};
+  border-radius: 5px;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.hoverBg};
+    color: ${({ theme }) => theme.hoverText};
+  }
 `;
 
 export default Border;
