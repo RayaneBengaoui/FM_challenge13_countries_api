@@ -9,6 +9,9 @@ import loupeIcon from "../icons/loupe.svg";
 //Redux
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSearch } from "../actions/countriesAction";
+import { clearDetail } from "../actions/countryDetailAction";
+
+import { useHistory } from "react-router-dom";
 
 const Nav = ({ themeToggler, theme }) => {
   const dispatch = useDispatch();
@@ -17,6 +20,8 @@ const Nav = ({ themeToggler, theme }) => {
 
   const { countries } = useSelector((state) => state.countries);
   const { country } = useSelector((state) => state.detail);
+
+  const history = useHistory();
 
   const isActive = () => {
     return Object.keys(country).length === 0 ? false : true;
@@ -52,10 +57,16 @@ const Nav = ({ themeToggler, theme }) => {
     setFilterRegion(e.target.value);
   };
 
+  const homePageBack = () => {
+    document.body.style.overflow = "auto";
+    dispatch(clearDetail());
+    history.push("/");
+  };
+
   return (
     <>
       <NavStyled active={isActive()}>
-        <h1>Where in the world ?</h1>
+        <h1 onClick={homePageBack}>Where in the world ?</h1>
         <button onClick={themeToggler}>
           <img
             src={theme === "light" ? moonIcon : sunIcon}
@@ -125,6 +136,10 @@ const NavStyled = styled.div`
     justify-content: center;
     font-size: 1.3rem;
     color: ${({ theme }) => theme.text};
+  }
+
+  h1 {
+    cursor: pointer;
   }
 `;
 
